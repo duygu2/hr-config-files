@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://employee-db-prod:5432/employeeservice
+    username: postgres
+    password: test
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      
+server:
+  port: 8081
+  error:
+    include-message: always
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
